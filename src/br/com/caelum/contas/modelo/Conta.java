@@ -9,6 +9,7 @@ public abstract class Conta {
 	protected double saldo;
 	// Data dataAbertura;
 	private String getNumero;
+	private Conta outraConta;
 
 	public Conta() {
 
@@ -87,6 +88,7 @@ public abstract class Conta {
 		return dados;
 	}
 
+	@Override
 	public String toString() {
 		return "[titular=" + nomeTitular + ", número=" + numeroConta + ", agencia=" + agencia + "]";
 	}
@@ -107,18 +109,22 @@ public abstract class Conta {
 	}
 
 	private void write(String string) {
-		// TODO Auto-generated method stub
 
 	}
-	
+
 	public boolean equals(Object object) {
 		if (object == null) {
 			return false;
 		}
-//		if (agencia.equals(object.agencia))  {
-//			return true;
-//		}
-		return false;
+		if (!(object instanceof Conta)) {
+			return false;
+		}
+		outraConta = (Conta) object;
+//		return numeroConta == outraConta.getNumero() && agencia.equals(outraConta.getAgencia());
+		// if (numeroConta == outraConta.numeroConta && equals(outraConta.agencia)) {
+		// return true;
+		// }
+		 return true;
 	}
 
 }

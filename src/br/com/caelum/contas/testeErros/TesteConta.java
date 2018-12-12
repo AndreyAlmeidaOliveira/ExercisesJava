@@ -13,6 +13,12 @@ public class TesteConta {
 		cp.deposita(100);
 		//		System.out.println("Valor Conta Corrente $"+cc.getSaldo());
 
+		
+		cc.setAgencia(123);
+		cp.setAgencia(123);
+		
+		System.out.println(cp.equals(cc));
+		
 		try {
 			cc.saca(102);
 			System.out.println("Saque efetuado com sucesso");
